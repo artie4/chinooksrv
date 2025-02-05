@@ -1,0 +1,10 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: chinooksrv
+  datasource:
+    url:
+    username:
+    password: ${SPRING_DATASOURCE_PASSWORD}
