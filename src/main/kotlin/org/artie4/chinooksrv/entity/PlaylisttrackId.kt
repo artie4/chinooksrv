@@ -2,7 +2,6 @@ package org.artie4.chinooksrv.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Embeddable
-import jakarta.persistence.Entity
 import org.hibernate.Hibernate
 import java.io.Serializable
 import java.util.Objects
@@ -14,7 +13,9 @@ class PlaylisttrackId : Serializable {
 
     @Column(name = "trackid", nullable = false)
     var trackid: Long? = null
+
     override fun hashCode(): Int = Objects.hash(playlistid, trackid)
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || Hibernate.getClass(this) != Hibernate.getClass(other)) return false
@@ -22,7 +23,7 @@ class PlaylisttrackId : Serializable {
         other as PlaylisttrackId
 
         return playlistid == other.playlistid &&
-                trackid == other.trackid
+            trackid == other.trackid
     }
 
     companion object {

@@ -25,7 +25,7 @@ class Playlist {
     @JoinTable(
         name = "playlisttrack",
         joinColumns = [JoinColumn(name = "playlistid")],
-        inverseJoinColumns = [JoinColumn(name = "trackid")]
+        inverseJoinColumns = [JoinColumn(name = "trackid")],
     )
     var tracks: MutableSet<Track> = mutableSetOf()
 }
