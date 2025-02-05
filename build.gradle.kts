@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
     kotlin("plugin.jpa") version "1.9.25"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.0"
+    kotlin("kapt") version "1.9.25"
 }
 
 group = "org.artie4"
@@ -42,6 +43,8 @@ dependencies {
 
     // Add OpenAPI/Swagger dependency
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+    kapt("org.mapstruct:mapstruct-processor:1.6.0")
+    compileOnly("org.mapstruct:mapstruct:1.6.0")
 }
 
 kotlin {
