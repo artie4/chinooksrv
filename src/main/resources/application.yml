@@ -11,3 +11,16 @@ spring:
     password: ${SPRING_DATASOURCE_PASSWORD}
   liquibase:
     change-log: classpath:/db//changelog/liquibase-changelog.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,env,beans,heapdump,threaddump"
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    display-request-duration: true

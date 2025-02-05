@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class ChinooksrvApplication
 
 fun main(args: Array<String>) {
-	runApplication<ChinooksrvApplication>(*args)
+    runApplication<ChinooksrvApplication>(*args)
 }
