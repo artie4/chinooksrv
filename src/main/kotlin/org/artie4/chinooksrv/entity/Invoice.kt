@@ -1,5 +1,6 @@
 package org.artie4.chinooksrv.entity
 
+import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
@@ -46,6 +47,6 @@ class Invoice {
     @Column(name = "total", precision = 10, scale = 2)
     var total: BigDecimal? = null
 
-    @OneToMany(mappedBy = "invoiceid")
+    @OneToMany(mappedBy = "invoiceid", cascade = [CascadeType.ALL])
     var invoicelines: MutableSet<Invoiceline> = mutableSetOf()
 }
