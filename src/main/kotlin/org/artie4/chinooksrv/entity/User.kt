@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
+import jakarta.persistence.OneToOne
 import jakarta.persistence.Table
 
 @Entity
@@ -25,4 +26,7 @@ class User(
     @CollectionTable(name = "user_roles", joinColumns = [JoinColumn(name = "user_id")])
     @Column(name = "role")
     val roles: Set<String>,
+    @OneToOne
+    @JoinColumn(name = "customer_id")
+    val customer: Customer,
 )

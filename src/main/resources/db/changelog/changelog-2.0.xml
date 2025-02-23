@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.19.xsd">
+
+    <changeSet id="2.0" author="author">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="users"/>
+        </preConditions>
+        <addColumn tableName="users">
+            <column name="customer_id" type="bigint">
+                <constraints
+                        nullable="true"
+                        foreignKeyName="users_customer_id_fk"
+                        referencedTableName="customer"
+                        referencedColumnNames="customerid"
+                />
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet id="2.1" author="author">
+        <preConditions>
+            <not>
+                <sequenceExists sequenceName="customer_seq"/>
+            </not>
+        </preConditions>
+        <createSequence sequenceName="customer_seq" incrementBy="50" startValue="1000"/>
+    </changeSet>
+    <changeSet id="2.2" author="author">
+        <preConditions>
+            <not>
+                <sequenceExists sequenceName="invoiceline_seq"/>
+            </not>
+        </preConditions>
+        <createSequence sequenceName="invoiceline_seq" incrementBy="50" startValue="10000"/>
+    </changeSet>
+    <changeSet id="2.3" author="author">
+        <preConditions>
+            <not>
+                <sequenceExists sequenceName="invoice_seq"/>
+            </not>
+        </preConditions>
+        <createSequence sequenceName="invoice_seq" incrementBy="50" startValue="1000"/>
+    </changeSet>
+</databaseChangeLog>
