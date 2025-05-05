@@ -1,0 +1,20 @@
+extend type Query {
+    getArtistsByFilter(filter: ArtistSearchFilter): [ArtistOutput!]
+}
+
+input ArtistSearchFilter {
+    artistId: Long
+    artistName: String,
+    albumTitle: String
+}
+
+type ArtistOutput {
+    id: Long
+    name: String
+    albums: [AlbumOutput!]
+}
+
+type AlbumOutput {
+    id: Long,
+    title: String
+}
