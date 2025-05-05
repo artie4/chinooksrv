@@ -53,7 +53,7 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.5")
 
-    //DGS
+    // DGS
     implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform:9.2.0"))
     implementation("com.netflix.graphql.dgs:graphql-dgs-spring-graphql-starter")
     implementation("com.netflix.graphql.dgs:graphql-dgs-extended-scalars")
