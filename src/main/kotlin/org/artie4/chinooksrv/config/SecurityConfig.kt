@@ -23,6 +23,7 @@ class SecurityConfig(
         http.csrf { it.disable() }
             .authorizeHttpRequests {
                 it.requestMatchers(
+                    "/graphql",
                     "/swagger-ui.html",
                     "/swagger-ui/**",
                     "/api-docs",

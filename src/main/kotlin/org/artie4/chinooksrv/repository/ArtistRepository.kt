@@ -2,10 +2,11 @@ package org.artie4.chinooksrv.repository
 
 import org.artie4.chinooksrv.entity.Artist
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 
-interface ArtistRepository : JpaRepository<Artist, Long> {
+interface ArtistRepository : JpaRepository<Artist, Long>, JpaSpecificationExecutor<Artist> {
     @Query("select a from Artist a left join fetch a.albums alb left join fetch alb.tracks where a.id = :id")
     fun findByIdWithAlbumsAndTracks(
         @Param("id") id: Long,

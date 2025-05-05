@@ -6,6 +6,7 @@ plugins {
     kotlin("plugin.jpa") version "1.9.25"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.0"
     kotlin("kapt") version "1.9.25"
+    id("com.netflix.dgs.codegen") version "7.0.0"
 }
 
 group = "org.artie4"
@@ -51,6 +52,12 @@ dependencies {
     implementation("io.jsonwebtoken:jjwt-api:0.12.5")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.5")
+
+    // DGS
+    implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform:9.2.0"))
+    implementation("com.netflix.graphql.dgs:graphql-dgs-spring-graphql-starter")
+    implementation("com.netflix.graphql.dgs:graphql-dgs-extended-scalars")
+    implementation("com.netflix.graphql.dgs:graphql-dgs-extended-validation")
 
     // logs
     implementation("io.github.oshai:kotlin-logging-jvm:6.0.3")
