@@ -1,18 +1,16 @@
 package org.artie4.chinooksrv.service.impl
 
 import io.mockk.every
+import io.mockk.mockk
+import io.mockk.slot
+import org.artie4.chinooksrv.entity.User
 import org.artie4.chinooksrv.repository.UserRepository
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.security.crypto.password.PasswordEncoder
-import io.mockk.mockk
-import io.mockk.slot
-import org.artie4.chinooksrv.entity.User
 import kotlin.test.assertEquals
 
-
 class UserServiceTest {
-
     private val userRepository: UserRepository = mockk()
     private val passwordEncoder: PasswordEncoder = mockk()
     private val customerRepository: CustomerRepository = mockk()
@@ -26,7 +24,6 @@ class UserServiceTest {
 
     @Test
     fun createUser() {
-
         val username = "username"
         val password = "qwerty"
         val roles = setOf("user")
