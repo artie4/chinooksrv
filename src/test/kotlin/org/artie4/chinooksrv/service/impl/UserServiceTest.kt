@@ -1,5 +1,7 @@
 package org.artie4.chinooksrv.service.impl
 
+import io.kotest.assertions.assertSoftly
+import io.kotest.matchers.shouldBe
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.slot
@@ -8,7 +10,6 @@ import org.artie4.chinooksrv.repository.UserRepository
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.security.crypto.password.PasswordEncoder
-import kotlin.test.assertEquals
 
 class UserServiceTest {
     private val userRepository: UserRepository = mockk()
@@ -37,15 +38,28 @@ class UserServiceTest {
 
         underTest.createUser(username, password, roles)
 
-        with(userSlot.captured) {
-            assertEquals(encodedPass, this.password)
-            assertEquals(username, this.username)
-            assertEquals(roles, this.roles)
+        assertSoftly {
+            with(userSlot.captured) {
+                encodedPass shouldBe this.password
+                username shouldBe this.username
+                roles shouldBe this.roles
+            }
         }
     }
 
     @Test
     fun findUserByUsername() {
-        TODO("Not implemented yet")
+        val usernameValue = "username"
+
+        val user =
+            mockk<User> {
+                every { username } returns usernameValue
+            }
+
+        every { userRepository.findByUsername(usernameValue) } returns user
+
+        val result = underTest.findUserByUsername(usernameValue)
+
+        result?.username shouldBe usernameValue
     }
 }

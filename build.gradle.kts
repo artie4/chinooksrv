@@ -40,8 +40,8 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("io.mockk:mockk:1.13.9")
+    testImplementation("io.kotest:kotest-assertions-core:5.8.0")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // Add OpenAPI/Swagger dependency
