@@ -50,7 +50,7 @@ dependencies {
     // Add OpenAPI/Swagger dependency
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
     kapt("org.mapstruct:mapstruct-processor:1.6.0")
-    compileOnly("org.mapstruct:mapstruct:1.6.0")
+    implementation("org.mapstruct:mapstruct:1.6.0")
 
     // JWT support
     implementation("io.jsonwebtoken:jjwt-api:0.12.5")

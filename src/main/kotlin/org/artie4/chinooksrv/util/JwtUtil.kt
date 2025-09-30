@@ -8,7 +8,7 @@ import javax.crypto.SecretKey
 
 object JwtUtil {
     private val SECRET_KEY: SecretKey = Jwts.SIG.HS256.key().build()
-    private val JWT_VALIDITY = 3600 * 5 // 5 hours
+    private const val JWT_VALIDITY = 3600 * 5 // 5 hours
 
     fun generateToken(userDetails: UserDetails): String {
         val claims: Map<String, Any> = HashMap()

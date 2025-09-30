@@ -1,5 +1,6 @@
 package org.artie4.chinooksrv.mapper
 
+import com.netflix.dgs.codegen.generated.types.AlbumOutput
 import org.artie4.chinooksrv.dto.AlbumDto
 import org.artie4.chinooksrv.entity.Album
 import org.mapstruct.Mapper
@@ -13,4 +14,6 @@ import org.mapstruct.ReportingPolicy
 )
 interface AlbumMapper {
     fun toAlbumDto(album: Album): AlbumDto
+
+    fun toAlbumOutput(albumDto: AlbumDto): AlbumOutput
 }

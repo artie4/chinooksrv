@@ -9,12 +9,20 @@ input ArtistSearchFilter {
 }
 
 type ArtistOutput {
-    id: Long
-    name: String
-    albums: [AlbumOutput!]
+    id: Long!
+    name: String!
+    albums: [AlbumOutput!]!
 }
 
 type AlbumOutput {
-    id: Long,
-    title: String
+    id: Long!,
+    title: String!
+    tracks: [TrackOutput!]!
+}
+
+type TrackOutput {
+    id: Long!,
+    name: String!,
+    milliseconds: Long!,
+    unitprice: Float,!
 }
