@@ -19,6 +19,6 @@ class Artist {
     @Column(name = "name", length = Integer.MAX_VALUE)
     var name: String? = null
 
-    @OneToMany(mappedBy = "artistid")
+    @OneToMany(mappedBy = "artist")
     var albums: MutableSet<Album> = mutableSetOf()
 }

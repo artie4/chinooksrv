@@ -1,5 +1,6 @@
 package org.artie4.chinooksrv.mapper
 
+import com.netflix.dgs.codegen.generated.types.ArtistOutput
 import org.artie4.chinooksrv.dto.ArtistDto
 import org.artie4.chinooksrv.entity.Artist
 import org.mapstruct.Mapper
@@ -13,4 +14,6 @@ import org.mapstruct.ReportingPolicy
 )
 interface ArtistMapper {
     fun toArtistDto(artist: Artist): ArtistDto
+
+    fun toArtistOutput(artistDto: ArtistDto): ArtistOutput
 }

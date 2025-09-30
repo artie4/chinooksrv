@@ -24,7 +24,7 @@ class Album {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "artistid")
-    var artistid: Artist? = null
+    var artist: Artist? = null
 
     @OneToMany(mappedBy = "albumid")
     var tracks: MutableSet<Track> = mutableSetOf()

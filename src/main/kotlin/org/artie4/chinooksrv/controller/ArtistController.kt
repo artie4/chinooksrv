@@ -17,7 +17,7 @@ class ArtistController(
 ) {
     @Operation(
         summary = "Artist by id",
-        security = [SecurityRequirement(name = "JWT")], // Указываем, что endpoint требует JWT
+        security = [SecurityRequirement(name = "JWT")],
     )
     @GetMapping("artist/{id}")
     fun getArtistById(
@@ -28,7 +28,7 @@ class ArtistController(
 
     @Operation(
         summary = "Artists by name",
-        security = [SecurityRequirement(name = "JWT")], // Указываем, что endpoint требует JWT
+        security = [SecurityRequirement(name = "JWT")],
     )
     @GetMapping("artists/by_name")
     fun getArtistByName(
@@ -39,7 +39,7 @@ class ArtistController(
 
     @Operation(
         summary = "Artists by album name",
-        security = [SecurityRequirement(name = "JWT")], // Указываем, что endpoint требует JWT
+        security = [SecurityRequirement(name = "JWT")],
     )
     @GetMapping("artists/by_title")
     fun getArtistByAlbumTitle(
