@@ -6,6 +6,7 @@ import io.mockk.every
 import io.mockk.mockk
 import io.mockk.slot
 import org.artie4.chinooksrv.entity.User
+import org.artie4.chinooksrv.repository.CustomerRepository
 import org.artie4.chinooksrv.repository.UserRepository
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
