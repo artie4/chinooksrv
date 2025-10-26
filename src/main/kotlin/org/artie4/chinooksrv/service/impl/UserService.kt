@@ -3,6 +3,7 @@ package org.artie4.chinooksrv.service.impl
 import jakarta.transaction.Transactional
 import org.artie4.chinooksrv.entity.Customer
 import org.artie4.chinooksrv.entity.User
+import org.artie4.chinooksrv.repository.CustomerRepository
 import org.artie4.chinooksrv.repository.UserRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service

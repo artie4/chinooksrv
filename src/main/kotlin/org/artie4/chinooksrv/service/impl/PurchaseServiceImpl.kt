@@ -6,19 +6,20 @@ import org.artie4.chinooksrv.entity.Invoice
 import org.artie4.chinooksrv.entity.Invoiceline
 import org.artie4.chinooksrv.repository.InvoiceRepository
 import org.artie4.chinooksrv.repository.TrackRepository
+import org.artie4.chinooksrv.service.PurchaseService
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.User
 import org.springframework.stereotype.Service
 import java.time.OffsetDateTime
 
 @Service
-class PurchaseService(
+class PurchaseServiceImpl(
     private val userService: UserService,
     private val trackRepository: TrackRepository,
     private val invoiceRepository: InvoiceRepository,
-) {
+) : PurchaseService {
     @Transactional
-    fun purchase(purchaseDto: PurchaseDto) {
+    override fun purchase(purchaseDto: PurchaseDto) {
         val userDetails = SecurityContextHolder.getContext().authentication.principal as User
         val user =
             userService.findUserByUsername(userDetails.username)

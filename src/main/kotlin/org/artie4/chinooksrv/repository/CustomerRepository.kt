@@ -1,4 +1,4 @@
-package org.artie4.chinooksrv.service.impl
+package org.artie4.chinooksrv.repository
 
 import org.artie4.chinooksrv.entity.Customer
 import org.springframework.data.jpa.repository.JpaRepository
