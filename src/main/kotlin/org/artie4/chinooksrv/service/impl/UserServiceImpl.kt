@@ -5,17 +5,18 @@ import org.artie4.chinooksrv.entity.Customer
 import org.artie4.chinooksrv.entity.User
 import org.artie4.chinooksrv.repository.CustomerRepository
 import org.artie4.chinooksrv.repository.UserRepository
+import org.artie4.chinooksrv.service.UserService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 
 @Service
-class UserService(
+class UserServiceImpl(
     private val userRepository: UserRepository,
     private val passwordEncoder: PasswordEncoder,
     private val customerRepository: CustomerRepository,
-) {
+) : UserService {
     @Transactional
-    fun createUser(
+    override fun createUser(
         username: String,
         password: String,
         roles: Set<String>,
@@ -30,7 +31,7 @@ class UserService(
         return userRepository.save(user)
     }
 
-    fun findUserByUsername(userName: String): User? {
+    override fun findUserByUsername(userName: String): User? {
         return userRepository.findByUsername(userName)
     }
 }
