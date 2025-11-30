@@ -7,6 +7,7 @@ import org.artie4.chinooksrv.entity.Invoiceline
 import org.artie4.chinooksrv.repository.InvoiceRepository
 import org.artie4.chinooksrv.repository.TrackRepository
 import org.artie4.chinooksrv.service.PurchaseService
+import org.artie4.chinooksrv.service.UserService
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.User
 import org.springframework.stereotype.Service

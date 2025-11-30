@@ -1,6 +1,6 @@
 package org.artie4.chinooksrv.controller
 
-import org.artie4.chinooksrv.service.impl.UserService
+import org.artie4.chinooksrv.service.UserService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController

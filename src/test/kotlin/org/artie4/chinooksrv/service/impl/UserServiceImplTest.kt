@@ -12,16 +12,16 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.security.crypto.password.PasswordEncoder
 
-class UserServiceTest {
+class UserServiceImplTest {
     private val userRepository: UserRepository = mockk()
     private val passwordEncoder: PasswordEncoder = mockk()
     private val customerRepository: CustomerRepository = mockk()
 
-    private lateinit var underTest: UserService
+    private lateinit var underTest: UserServiceImpl
 
     @BeforeEach
     fun setUp() {
-        underTest = UserService(userRepository, passwordEncoder, customerRepository)
+        underTest = UserServiceImpl(userRepository, passwordEncoder, customerRepository)
     }
 
     @Test
