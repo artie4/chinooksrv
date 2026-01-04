@@ -10,6 +10,7 @@ import org.artie4.chinooksrv.entity.Customer
 import org.artie4.chinooksrv.entity.Invoice
 import org.artie4.chinooksrv.repository.InvoiceRepository
 import org.artie4.chinooksrv.repository.TrackRepository
+import org.artie4.chinooksrv.service.UserService
 import org.artie4.chinooksrv.stub.TrackStub
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
